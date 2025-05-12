@@ -1,13 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // defining consts
-const spanish = "Spanish"
-const french = "French"
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Hola, "
-const frenchHelloPrefix = "Bonjour, "
+const (
+	french             = "French"
+	spanish            = "Spanish"
+	englishHelloPrefix = "Hello, "
+	spanishHelloPrefix = "Hola, "
+	frenchHelloPrefix  = "Bonjour, "
+)
 
 // hello is a function that returns a string that can be used anywhere
 // in the file
@@ -17,15 +21,7 @@ func Hello(name, language string) string {
 		name = "World"
 	}
 
-	if language == spanish {
-		return spanishHelloPrefix + name
-	}
-
-	if language == french {
-		return frenchHelloPrefix + name
-	}
-
-	return englishHelloPrefix + name
+	return greetingPrefix(language) + name
 }
 
 func main() {
@@ -35,3 +31,16 @@ func main() {
 // it is always good to seperate the domain from side effect
 // our domain here is the string hello, world and the side effect
 // is Println function
+
+// greetingPrefix Function
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case spanish:
+		prefix = spanishHelloPrefix
+	case french:
+		prefix = frenchHelloPrefix
+	default:
+		prefix = englishHelloPrefix
+	}
+	return
+}
