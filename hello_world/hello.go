@@ -2,11 +2,14 @@ package main
 
 import "fmt"
 
+// defining consts
+const englishHelloPrefix = "Hello, "
+
 // hello is a function that returns a string that can be used anywhere
 // in the file
 // Hello is uppercase for us to use it in different files
 func Hello(name string) string {
-	return "Hello, " + name
+	return englishHelloPrefix + name
 }
 
 func main() {
