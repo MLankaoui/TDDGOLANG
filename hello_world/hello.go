@@ -5,12 +5,12 @@ import "fmt"
 // hello is a function that returns a string that can be used anywhere
 // in the file
 // Hello is uppercase for us to use it in different files
-func Hello() string {
-	return "Hello, world"
+func Hello(name string) string {
+	return "Hello, " + name
 }
 
 func main() {
-	fmt.Println(Hello())
+	fmt.Println(Hello("world"))
 }
 
 // it is always good to seperate the domain from side effect
