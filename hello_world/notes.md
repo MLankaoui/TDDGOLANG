@@ -60,7 +60,7 @@ func assetCorrectMessage(t testing.TB, got, want string) {
 5. Refactor
 
 ## Switch
-- when we have lots of ```go if``` statements it is better to use ```go switch```
+- when we have lots of ```if``` statements it is better to use ```switch```
 - **Example**
 ```go
 switch language {
