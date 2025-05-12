@@ -36,3 +36,18 @@ const englishHelloPrefix = "Hello, "
 		}
 	})
 ```
+
+## In case of repeated checking:
+- It is better to refactor the code to avoid repetition:
+- **Example**
+```go
+// we have repeated code so let's put it on a seperate function
+func assetCorrectMessage(t testing.TB, got, want string) {
+	// it helps specify where the test really failed insted of it being inside our helper function
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+
+}
+```

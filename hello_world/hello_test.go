@@ -11,9 +11,7 @@ func TestHello(t *testing.T) {
 		want := "Hello, Chris"
 
 		// checking if what we got is what we expected
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
+		assetCorrectMessage(t, got, want)
 	})
 
 	t.Run("say 'Hello, World when an empty string is supplied", func(t *testing.T) {
@@ -21,9 +19,17 @@ func TestHello(t *testing.T) {
 
 		want := "Hello, World"
 
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
+		assetCorrectMessage(t, got, want)
 	})
+
+}
+
+// we have repeated code so let's put it on a seperate function
+func assetCorrectMessage(t testing.TB, got, want string) {
+	// it helps specify where the test really failed insted of it being inside our helper function
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
 
 }
