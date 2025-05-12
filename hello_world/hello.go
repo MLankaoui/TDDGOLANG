@@ -9,6 +9,9 @@ const englishHelloPrefix = "Hello, "
 // in the file
 // Hello is uppercase for us to use it in different files
 func Hello(name string) string {
+	if name == "" {
+		name = "World"
+	}
 	return englishHelloPrefix + name
 }
 
