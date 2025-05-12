@@ -6,16 +6,16 @@ import "testing"
 func TestHello(t *testing.T) {
 	t.Run("saying hello to people", func(t *testing.T) {
 		// what you got from the function
-		got := Hello("Chris")
+		got := Hello("Chris", "Spanish")
 		// what we expect
-		want := "Hello, Chris"
+		want := "Hola, Chris"
 
 		// checking if what we got is what we expected
 		assetCorrectMessage(t, got, want)
 	})
 
 	t.Run("say 'Hello, World when an empty string is supplied", func(t *testing.T) {
-		got := Hello("")
+		got := Hello("", "")
 
 		want := "Hello, World"
 
